@@ -9,6 +9,15 @@ public class Main {
         Hobbit.wypiszInfo();
         HarryPotter.wypiszInfo();
 
+        Czytelnik c1 = new Czytelnik("Bartek", "Kowalski", 101, 0);
+        Czytelnik c2 = new Czytelnik("Rafal", "Kwiatkowski", 202, 5);
+
+        c1.zwiekszLiczbeWypozyczen();
+        c2.zmniejszLiczbeWypozyczen();
+
+        c1.wypiszDane();
+        c2.wypiszDane();
+
     }
 
 }
