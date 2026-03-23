@@ -45,4 +45,30 @@ public class Biblioteka {
     public int policzDostepneKsiazki() {
         return liczbaksiazek;
     }
+    public void wypozyczKsiazke(String tytul,Czytelnik czytelnik) {
+        for (int i = 0; i < liczbaksiazek; i++) {
+            if (ksiazki[i].tytul.equals(tytul)) {
+                if (ksiazki[i].wypozycz()) {
+                    czytelnik.zwiekszLiczbeWypozyczen();
+                    System.out.println("Wypozyczono: " + tytul);
+                    return;
+                }
+
+            }
+        }
+        System.out.println("Nie udalo sie wypozyczyc ksiazki pod tytuelm: " + tytul);
+    }
+    public void zwrocKsiazke(String tytul, Czytelnik czytelnik) {
+        for (int i = 0; i < liczbaksiazek; i++) {
+            if (ksiazki[i].tytul.equals(tytul)) {
+                if (ksiazki[i].zwroc()) {
+                    czytelnik.zmniejszLiczbeWypozyczen();
+                    System.out.println("Zwrocono: " + tytul);
+                    return;
+
+                }
+                System.out.println("Nie udalo sie zwrocic ksiazki pod tytulem: " + tytul);
+            }
+        }
+    }
 }

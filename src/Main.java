@@ -12,12 +12,26 @@ public class Main {
         Czytelnik c1 = new Czytelnik("Bartek", "Kowalski", 101, 0);
         Czytelnik c2 = new Czytelnik("Rafal", "Kwiatkowski", 202, 5);
 
-        c1.zwiekszLiczbeWypozyczen();
-        c2.zmniejszLiczbeWypozyczen();
 
         c1.wypiszDane();
         c2.wypiszDane();
 
+        Biblioteka mojaBiblioteka = new Biblioteka(10);
+        mojaBiblioteka.dodajKsiazke(Dzuma);
+       mojaBiblioteka.dodajKsiazke(Hobbit);
+        mojaBiblioteka.dodajKsiazke(HarryPotter);
+
+        mojaBiblioteka.wypozyczKsiazke("Hobbit", c1);
+
+        mojaBiblioteka.wypiszDostepneKsiazki();
+        c1.wypiszDane();
+
+        mojaBiblioteka.zwrocKsiazke("Dzuma", c2);
+        c2.wypiszDane();
+
+
+
     }
+
 
 }

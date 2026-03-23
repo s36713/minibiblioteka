@@ -1,5 +1,5 @@
 public class Ksiazka {
-    private String tytul;
+    public String tytul;
     private String autor;
     private int liczbaStron;
     private boolean dostepna;
@@ -32,10 +32,13 @@ public class Ksiazka {
 
         }
 
-
     }
 
-    void zwroc() {
-        System.out.println("Dziekujem za zwrot!");
+    public boolean zwroc() {
+        if (!dostepna) {
+            this.dostepna = true;
+            return true;
+        }
+        return false;
     }
 }
